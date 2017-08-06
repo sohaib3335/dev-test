@@ -6,6 +6,7 @@
         body {
             background-color: Cyan;
         }
+
         h1 {
             display: inline-block;
             background-color: purple;
@@ -35,18 +36,34 @@
     <!--<h1 class="left">Raniah Farooq</h1>-->
 
     <div class="website2">
-        
-    <button type="button"
-onclick="document.getElementById('demo').innerHTML = Date()">
+
+        <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">
 Today's date and Time.</button>
-<p id="demo"></p>
+        <p id="demo"></p>
     </div>
 
-<div class="website3">
-<p id="demo1">Welcome</p>
+    <div class="website3">
+        <p id="demo1">Welcome</p>
 
-<button type="button1" onclick="document.getElementById('demo1').style.fontSize='55px'">Click here to get bigger WELCOME</button>
-</div>
+        <button type="button1" onclick="document.getElementById('demo1').style.fontSize='55px'">Click here to get bigger WELCOME</button>
+    </div>
+
+    <div id="myTable">
+
+    </div>
+    <script type="text/javascript">
+        for (var x = 2; x <= 10; x++) {
+            var myVar = "<div style='display:inline-block; width:300px;'>";
+            for (var multiplier = 1; multiplier <= 10; multiplier++) {
+                var y = x * multiplier;
+                console.log(y);
+                myVar += x + " x " + multiplier + " = " + y + "<br />";
+            }
+            myVar += "</div>";
+             document.getElementById("myTable").innerHTML += myVar;
+        }
+
+    </script>
 
 </body>
 
