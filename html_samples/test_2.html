@@ -78,9 +78,25 @@ Today's date and Time.</button>
             <button type="button1" onclick="document.getElementById('demo1').style.fontSize='55px'">Click here to get bigger WELCOME</button>
         </div>
         <br />
-        <input type="number" id="txtTableInput" />
-        <input type="button" id="btnSubmit" value="Show Table" onclick="showTable();"/>
+
+
+        <input type="number" id="FromTheNumber" />
         <br />
+        <p>From The Number</p>
+        <br />
+
+        <input type="number" id="ToTheNumber" />
+        <br />
+        <p>To The Number</p>
+        <br />
+
+
+        <input type="number" id="Multiplier" />
+        <input type="button" id="MultiplierSubmit" value="Go" onclick="showTable();"/>
+        <br />
+        <p>Multiplier</p>
+        <br />
+
         <div id="myTable" class="card-deck">
 
         </div>
@@ -91,12 +107,15 @@ Today's date and Time.</button>
         function showDate() {
             document.getElementById('demo').innerHTML = Date();
         }
+
+
         function showTable()
         {
             document.getElementById("myTable").innerHTML = "";
-            var z = document.getElementById("txtTableInput").value;
-
-            for (var x = z; x <= 10; x++) {
+            var z = document.getElementById("FromTheNumber").value;
+            var q = document.getElementById("ToTheNumber").value;
+            var w = document.getElementById("Multiplier").value;
+            for (var x = z ; x <= q; x++) {
                 //var myVar = "<div class='tables-container' style='display:inline-block; width:150px; border: 1px solid red;'>";
                 var myVar = '' +
                     
@@ -107,7 +126,7 @@ Today's date and Time.</button>
                     '<p class="card-text"></p>' +
                     '</div>'
                     ;
-                for (var multiplier = 1; multiplier <= 5; multiplier++) {
+                for (var multiplier = 1; multiplier <= w; multiplier++) {
                     var y = x * multiplier;
 
                     myVar += "<li class='list-group-item'>" + x + " x " + multiplier + " = " + y + "</li>";
