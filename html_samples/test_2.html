@@ -3,24 +3,31 @@
 
 <head>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
     <style>
         body {
-            background-color: Cyan;
+            background-color: lightgoldenrodyellow;
         }
 
         h1 {
             display: inline-block;
-            background-color: purple;
+            background-color:lightseagreen;
             width: 500px;
+            color: gold;
+            
+            
         }
 
         .website1 {
             text-align: center;
-            background-color: green;
+            background-color: lightgrey;
         }
 
         .right {
@@ -30,59 +37,88 @@
         .left {
             float: left;
         }
-        .tables-container {   
-            margin-left:50px;
+
+        .tables-container {
+            margin-left: 50px;
             /* padding-left: 15px;
             padding-bottom: 20px;
             padding-top: 20px; */
-            padding: 20px 15px;
+            padding: 20px 
+            15px;
+                
         }
-        .tables-container:nth-of-type(3) {   
-            margin-left:150px;
+
+        .tables-container:nth-of-type(3) {
+            margin-left: 150px;
+        }
+        .demo1 {
+            color: lightseagreen
         }
         
     </style>
 </head>
 
 <body>
+    <div class="container-fluid">
+        <div class="website1">
+            <h1>Sohaib Farooq</h1>
+        </div>
+        <!--<h1 class="left">Raniah Farooq</h1>-->
 
-    <div class="website1">
-        <h1>Sohaib Farooq</h1>
-    </div>
-    <!--<h1 class="left">Raniah Farooq</h1>-->
+        <div class="website2">
 
-    <div class="website2">
-
-        <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">
+            <button type="button" onclick="showDate()">
 Today's date and Time.</button>
-        <p id="demo"></p>
+            <p id="demo"></p>
+        </div>
+
+        <div class="website3">
+            <p id="demo1">Welcome</p>
+
+            <button type="button1" onclick="document.getElementById('demo1').style.fontSize='55px'">Click here to get bigger WELCOME</button>
+        </div>
+        <br />
+        <input type="number" id="txtTableInput" />
+        <input type="button" id="btnSubmit" value="Show Table" onclick="showTable();"/>
+        <br />
+        <div id="myTable" class="card-deck">
+
+        </div>
+
     </div>
-
-    <div class="website3">
-        <p id="demo1">Welcome</p>
-
-        <button type="button1" onclick="document.getElementById('demo1').style.fontSize='55px'">Click here to get bigger WELCOME</button>
-    </div>
-
-    <div id="myTable">
-
-    </div>
-
-    
     <script type="text/javascript">
-        for (var x = 5; x <= 10; x++) {
-            var myVar = "<div class='tables-container' style='display:inline-block; width:150px; border: 1px solid red;'>";
-            for (var multiplier = 1; multiplier <= 15; multiplier++) {
-                var y = x * multiplier;
-                
-                myVar += x + " x " + multiplier + " = " + y + "<br />";
-                console.log(myVar); //it prints to the console.
-            }
-            myVar += "</div>";
-            document.getElementById("myTable").innerHTML += myVar;
-        }
 
-    </script>
+        function showDate() {
+            document.getElementById('demo').innerHTML = Date();
+        }
+        function showTable()
+        {
+            document.getElementById("myTable").innerHTML = "";
+            var z = document.getElementById("txtTableInput").value;
+
+            for (var x = z; x <= 10; x++) {
+                //var myVar = "<div class='tables-container' style='display:inline-block; width:150px; border: 1px solid red;'>";
+                var myVar = '' +
+                    
+                    "<div class='card' style='width:300px;'>" + 
+                    "<ul class='list-group list-group-flush'>" +
+                    '<div class="card-block">' +
+                    '<h4 class="card-title">Table of ' + x + '</h4>' +
+                    '<p class="card-text"></p>' +
+                    '</div>'
+                    ;
+                for (var multiplier = 1; multiplier <= 5; multiplier++) {
+                    var y = x * multiplier;
+
+                    myVar += "<li class='list-group-item'>" + x + " x " + multiplier + " = " + y + "</li>";
+                    console.log(myVar); //it prints to the console.
+                }
+                myVar += "</ul></div>";
+                document.getElementById("myTable").innerHTML += myVar;
+            }
+        }
+</script>
+
 
 </body>
 
