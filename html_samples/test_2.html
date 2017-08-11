@@ -18,11 +18,9 @@
 
         h1 {
             display: inline-block;
-            background-color:lightseagreen;
+            background-color: lightseagreen;
             width: 500px;
             color: gold;
-            
-            
         }
 
         .website1 {
@@ -43,22 +41,16 @@
             /* padding-left: 15px;
             padding-bottom: 20px;
             padding-top: 20px; */
-            padding: 20px 
-            15px;
-                
+            padding: 20px 15px;
         }
 
         .tables-container:nth-of-type(3) {
             margin-left: 150px;
         }
+
         .demo1 {
             color: lightseagreen
         }
-        .numbers-addition {
-            display: inline-block
-        }
-        
-        
     </style>
 </head>
 
@@ -82,74 +74,49 @@ Today's date and Time.</button>
 
             <button type="button1" onclick="document.getElementById('demo1').style.fontSize='55px'">Click here to get bigger WELCOME</button>
         </div>
-
-        
         <br />
         <h3 class="table-calculator">Table Calculator</h3>
-        <br />
         <input type="number" id="FromTheNumber" />
-        <br />
         <p>From The Number</p>
-        <br />
-
         <input type="number" id="ToTheNumber" />
         <br />
         <p>To The Number</p>
-        <br />
-
-
         <input type="number" id="Multiplier" />
-        
-        
-        <br />
         <p>Multiplier</p>
+        <input type="button" id="MultiplierSubmit" value="Go" onclick="showTable()" />
         <br />
-        <input type="button" id="MultiplierSubmit" value="Go" onclick="showTable()"/>
+        <div id="myTable" class="card-deck"></div>
         <br />
-
-        
-        <div id="myTable" class="card-deck">
-
-            </div>
-        <br />
-        
-        <br />
-        <h3 class="numbers-addition"> Add Numbers </h3>
-        <div id="myAdd" class="adding-numbers">
-
-            </div>
-        <br />
+        <h3>Calculator</h3>
         <input type="number" id="1stNumber" />
         <br />
         <p>Enter your First Number</p>
-        <br />
-
         <input type="number" id="2ndNumber" />
         <br />
         <p>Enter your Second Number</p>
+        <input type="button" class="btn btn-primary" id="Add" value="+" onclick="showResult(1)" />
+        <input type="button" class="btn btn-success" id="Sub" value="-" onclick="showResult(2)" />
         <br />
-        <input type="button" id="Adder" value="Go" onclick="showAdd()"/>
-        <br />
+        <div id="myResult">
+
+        </div>
+
 
     </div>
     <script type="text/javascript">
-
         function showDate() {
             document.getElementById('demo').innerHTML = Date();
         }
-
-
-        function showTable()
-        {
+        function showTable() {
             document.getElementById("myTable").innerHTML = "";
             var z = parseInt(document.getElementById("FromTheNumber").value);
             var q = parseInt(document.getElementById("ToTheNumber").value);
             var w = parseInt(document.getElementById("Multiplier").value);
-            for (var z ; z <= q; z++) {
+            for (var z; z <= q; z++) {
                 //var myVar = "<div class='tables-container' style='display:inline-block; width:150px; border: 1px solid red;'>";
                 var myVar = '' +
-                    
-                    "<div class='card' style='width:300px;'>" + 
+
+                    "<div class='card' style='width:300px;'>" +
                     "<ul class='list-group list-group-flush'>" +
                     '<div class="card-block">' +
                     '<h4 class="card-title">Table of ' + z + '</h4>' +
@@ -166,36 +133,37 @@ Today's date and Time.</button>
                 document.getElementById("myTable").innerHTML += myVar;
             }
         }
-        function showAdd ()
-        {
-        document.getElementById("myAdd").innerHTML = "";
-        var a = parseInt(document.getElementById("1stNumber").value);
-        var b = parseInt(document.getElementById("2ndNumber").value); {
-        var c = a * b;
-        var myVar1 = '' +
 
-                     "<div class='card2' style='width:300px;'>" + 
-                    "<ul class='list-group list-group-flush2'>" +
-                    '<div class="card-block2">' +
-                    '<h4 class="card-title2">Addition of the Number ' + a + "+" + b + '</h4>' +
-                    '<p class="card-text2"></p>' +
-                    '</div>'
+        function showResult(operator) {
+            document.getElementById("myResult").innerHTML = "";
+            var a = parseInt(document.getElementById("1stNumber").value);
+            var b = parseInt(document.getElementById("2ndNumber").value);
+            var c;
+            if(operator == 1)
+                c = a + b;
+            else if(operator == 2)
+                c = a - b;
+            var myVar1 = '' +
 
-             myVar1 += "<li class='list-group-item'>" + a + " + " + b + " = " + c + "</li>";
-             console.log(myVar1);
-        
+                "<div class='card' style='width:300px;'>" +
+                "<ul class='list-group list-group-flush'>" +
+                '<div class="card-block">' +
+                '<h4 class="card-title">Addition of the Number ' + a + "+" + b + '</h4>' +
+                '<p class="card-text"></p>' +
+                '</div>'
 
-              }
-        myVar1 += "</ul></div>";
-                document.getElementById("myAdd").innerHTML += myVar1;
+            myVar1 += "<li class='list-group-item'>" + a + " + " + b + " = " + c + "</li>";
+            console.log(myVar1);
+
+
+
+            myVar1 += "</ul></div>";
+            document.getElementById("myResult").innerHTML += myVar1;
         }
-</script>
 
-        <br />
+    </script>
 
-        
 
-        <br />
 
 </body>
 
