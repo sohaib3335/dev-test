@@ -12,22 +12,29 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
         crossorigin="anonymous"></script>
     <style>
-
+        body {
+            background-color: lightgoldenrodyellow;
+        }
     </style>
 
     <body>
         <div class="container">
-            <h3>Calculator</h3>
+            <h1>
+                Calculator
+                <small class="text-muted">For Testing</small>
+            </h1>
+            <br />
             <input type="number" id="1stNumber" />
             <br />
             <p>Enter your First Number</p>
             <input type="number" id="2ndNumber" />
             <br />
             <p>Enter your Second Number</p>
-            <input type="button" class="btn btn-primary" id="Add" value="+" onclick="showResult(1)" />
-            <input type="button" class="btn btn-success" id="Sub" value="-" onclick="showResult(2)" />
-            <input type="button" class="btn btn-success" id="Sub" value="x" onclick="showResult(3)" />
-            <input type="button" class="btn btn-success" id="Sub" value="÷" onclick="showResult(4)" />
+            <input type="button" class="btn btn-outline-success" id="Add" value="+" onclick="showResult(1)" />
+            <input type="button" class="btn btn-outline-success" id="Sub" value="-" onclick="showResult(2)" />
+            <input type="button" class="btn btn-outline-success" id="Sub" value="x" onclick="showResult(3)" />
+            <input type="button" class="btn btn-outline-success" id="Sub" value="÷" onclick="showResult(4)" />
+            <br />
             <br />
             <div id="myResult">
             </div>
@@ -51,12 +58,19 @@
 
                     "<div class='card' style='width:300px;'>" +
                     "<ul class='list-group list-group-flush'>" +
-                    '<div class="card-block">' +
-                    '<h4 class="card-title">Addition of the Number ' + a + "+" + b + '</h4>' +
                     '<p class="card-text"></p>' +
                     '</div>'
 
-                myVar1 += "<li class='list-group-item'>" + a + " + " + b + " = " + c + "</li>";
+                myVar1 += "<li class='list-group-item'>" + a;
+                if (operator == 1)
+                    myVar1 += " + ";
+                else if (operator == 2)
+                    myVar1 += " - ";
+                else if (operator == 3)
+                    myVar1 += " x ";
+                else if (operator == 4)
+                    myVar1 += " ÷ ";
+                myVar1 += b + " = " + c + "</li>";
                 console.log(myVar1);
 
 
