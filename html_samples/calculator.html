@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+    <style>
+
+    </style>
+
+    <body>
+        <div class="container">
+            <h3>Calculator</h3>
+            <input type="number" id="1stNumber" />
+            <br />
+            <p>Enter your First Number</p>
+            <input type="number" id="2ndNumber" />
+            <br />
+            <p>Enter your Second Number</p>
+            <input type="button" class="btn btn-primary" id="Add" value="+" onclick="showResult(1)" />
+            <input type="button" class="btn btn-success" id="Sub" value="-" onclick="showResult(2)" />
+            <input type="button" class="btn btn-success" id="Sub" value="x" onclick="showResult(3)" />
+            <input type="button" class="btn btn-success" id="Sub" value="÷" onclick="showResult(4)" />
+            <br />
+            <div id="myResult">
+            </div>
+        </div>
+        <script type="text/javascript">
+            function showResult(operator) {
+                document.getElementById("myResult").innerHTML = "";
+                var a = parseInt(document.getElementById("1stNumber").value);
+                var b = parseInt(document.getElementById("2ndNumber").value);
+                var c;
+                if (operator == 1)
+                    c = a + b;
+                else if (operator == 2)
+                    c = a - b;
+                else if (operator == 3)
+                    c = a * b;
+                else if (operator == 4)
+                    c = a / b;
+
+                var myVar1 = '' +
+
+                    "<div class='card' style='width:300px;'>" +
+                    "<ul class='list-group list-group-flush'>" +
+                    '<div class="card-block">' +
+                    '<h4 class="card-title">Addition of the Number ' + a + "+" + b + '</h4>' +
+                    '<p class="card-text"></p>' +
+                    '</div>'
+
+                myVar1 += "<li class='list-group-item'>" + a + " + " + b + " = " + c + "</li>";
+                console.log(myVar1);
+
+
+
+                myVar1 += "</ul></div>";
+                document.getElementById("myResult").innerHTML += myVar1;
+            }
+        </script>
+
+
+    </body>
+
+</html>
