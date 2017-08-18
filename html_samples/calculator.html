@@ -34,6 +34,7 @@
             <input type="button" class="btn btn-outline-success" id="Sub" value="-" onclick="showResult(2)" />
             <input type="button" class="btn btn-outline-success" id="Sub" value="x" onclick="showResult(3)" />
             <input type="button" class="btn btn-outline-success" id="Sub" value="÷" onclick="showResult(4)" />
+            <input type="button" class="btn btn-outline-success" id="Sub" value="%" onclick="showResult(5)" />
             <br />
             <br />
             <div id="myResult">
@@ -42,6 +43,7 @@
         <script type="text/javascript">
             function showResult(operator) {
                 document.getElementById("myResult").innerHTML = "";
+
                 var a = parseInt(document.getElementById("1stNumber").value);
                 var b = parseInt(document.getElementById("2ndNumber").value);
                 var c;
@@ -53,6 +55,9 @@
                     c = a * b;
                 else if (operator == 4)
                     c = a / b;
+                else if (operator == 5)
+                    c = a / 100;
+
 
                 var myVar1 = '' +
 
@@ -62,18 +67,43 @@
                     '</div>'
 
                 myVar1 += "<li class='list-group-item'>" + a;
-                if (operator == 1)
-                    myVar1 += " + ";
-                else if (operator == 2)
-                    myVar1 += " - ";
-                else if (operator == 3)
-                    myVar1 += " x ";
-                else if (operator == 4)
-                    myVar1 += " ÷ ";
-                myVar1 += b + " = " + c + "</li>";
+
+                // if (operator == 1)
+                //     myVar1 += " + ";
+                // else if (operator == 2)
+                //     myVar1 += " - ";
+                // else if (operator == 3)
+                //     myVar1 += " x ";
+                // else if (operator == 4)
+                //     myVar1 += " ÷ ";
+                // else if (operator == 5)
+                //     myVar1 += "% ";
+
+                switch (operator) {
+                    case 1:
+                        myVar1 += " + ";
+                        break;
+                    case 2:
+                        myVar1 += " - ";
+                        break;
+                    case 3:
+                        myVar1 += "  x";
+                        break;
+                    case 4:
+                        myVar1 += " + ";
+                        break;
+                    case 5:
+                        myVar1 += "% ";
+                        break;
+                }
+
+                if (operator != 5) {
+                    myVar1 += b
+                }
+
+                myVar1 += " = " + c + "</li>";
+
                 console.log(myVar1);
-
-
 
                 myVar1 += "</ul></div>";
                 document.getElementById("myResult").innerHTML += myVar1;
