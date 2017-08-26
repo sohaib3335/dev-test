@@ -32,26 +32,26 @@
                         <th>Supplier</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="bg-success">
+                <tbody id="tblBody">
+                    <!-- <tr class="bg-success">
                         <th scope="row" class="bg-success">1</th>
-                        <td class="bg-success"><input type="text" id="box11" value="" oninput="myFunction11()" /></td>
-                        <td class="bg-success"><input type="text" id="box12" value="" oninput="myFunction12()" /></td>
-                        <td class="bg-success"><input type="text" id="box13" value="" oninput="myFunction13()" /></td>
+                        <td class="bg-success"><input type="text" id="box11" value="" oninput="myFunction11('box11','11')" /></td>
+                        <td class="bg-success"><input type="text" id="box12" value="" oninput="myFunction11('box12','12')" /></td>
+                        <td class="bg-success"><input type="text" id="box13" value="" oninput="myFunction11('box13','13')" /></td>
                     </tr>
                     <tr class="bg-success">
                         <th scope="row" class="bg-success">2</th>
-                        <td class="bg-success"><input type="text" id="box21" value="" oninput="myFunction21()" /></td>
-                        <td class="bg-success"><input type="text" id="box22" value="" oninput="myFunction22()" /></td>
-                        <td class="bg-success"><input type="text" id="box23" value="" oninput="myFunction23()" /></td>
+                        <td class="bg-success"><input type="text" id="box21" value="" oninput="myFunction11('box21','21')" /></td>
+                        <td class="bg-success"><input type="text" id="box22" value="" oninput="myFunction11('box22','22')" /></td>
+                        <td class="bg-success"><input type="text" id="box23" value="" oninput="myFunction11('box23','23')" /></td>
                     </tr>
                     <tr class="bg-success">
                         <th scope="row" class="bg-success">3</th>
-                        <td class="bg-success"><input type="text" id="box31" value="" oninput="myFunction31()" /></td>
-                        <td class="bg-success"><input type="text" id="box32" value="" oninput="myFunction32()" /></td>
-                        <td class="bg-success"><input type="text" id="box33" value="" oninput="myFunction33()" /></td>
+                        <td class="bg-success"><input type="text" id="box31" value="" oninput="myFunction11('box31','31')" /></td>
+                        <td class="bg-success"><input type="text" id="box32" value="" oninput="myFunction11('box32','32')" /></td>
+                        <td class="bg-success"><input type="text" id="box33" value="" oninput="myFunction11('box33','33')" /></td>
 
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
             <br />
@@ -64,67 +64,121 @@
                         <th>Supplier</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="bg-success">
+                <tbody id="tblResult">
+                    <!-- <tr class="bg-success">
                         <th scope="row" class="bg-success">1</th>
-                        <td class="bg-success"><p id="11"></p></td>
-                        <td class="bg-success"><p id="12"></p></td>
-                        <td class="bg-success"><p id="13"></p></td>
+                        <td class="bg-success">
+                            <p id="11"></p>
+                        </td>
+                        <td class="bg-success">
+                            <p id="12"></p>
+                        </td>
+                        <td class="bg-success">
+                            <p id="13"></p>
+                        </td>
                     </tr>
                     <tr class="bg-success">
                         <th scope="row" class="bg-success">2</th>
-                        <td class="bg-success"><p id="21"></p></td>
-                        <td class="bg-success"><p id="22"></p></td>
-                        <td class="bg-success"><p id="23"></p></td>
+                        <td class="bg-success">
+                            <p id="21"></p>
+                        </td>
+                        <td class="bg-success">
+                            <p id="22"></p>
+                        </td>
+                        <td class="bg-success">
+                            <p id="23"></p>
+                        </td>
                     </tr>
                     <tr class="bg-success">
                         <th scope="row" class="bg-success">3</th>
-                        <td class="bg-success"><p id="31"></p></td>
-                        <td class="bg-success"><p id="32"></p></td>
-                        <td class="bg-success"><p id="33"></p></td>
+                        <td class="bg-success">
+                            <p id="31"></p>
+                        </td>
+                        <td class="bg-success">
+                            <p id="32"></p>
+                        </td>
+                        <td class="bg-success">
+                            <p id="33"></p>
+                        </td>
 
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
 
-            <script>
-                function myFunction11() {
-                    var x = document.getElementById("box11").value;
-                    document.getElementById("11").innerHTML =  x;
+            <script type="text/javascript">
+                function myFunction11(box, cell) {
+                    console.log(box, cell);
+                    document.getElementById(cell).innerHTML = document.getElementById(box).value;;
                 }
-                function myFunction12() {
-                    var x = document.getElementById("box12").value;
-                    document.getElementById("12").innerHTML = x;
+
+                generateRows();
+                function generateRows() {
+                    //var x = document.getElementById("tblBody");
+                    for (var i = 0; i < 5; i++) {
+                        var x = "" +
+                            "<tr> " +
+                            '<th scope="row" class="bg-success">' + i + '</th>';
+                        for (var j = 0; j < 3; j++) {
+                            x += "" +
+                                '<td class="bg-success"><input type="text" id="box' + i + "" + j +
+                                '" value="" oninput="myFunction11(\'box' + i + "" + j + '\',\'cell' + i + "" + j +
+                                '\')" /></td>';
+                        }
+                        x += "" + "</tr>";
+                        document.getElementById("tblBody").innerHTML += x;
+                    }
+
+                    for (var i = 0; i < 5; i++) {
+                        var x = "" +
+                            "<tr> " +
+                            '<th scope="row" class="bg-success">' + i + '</th>';
+                        for (var j = 0; j < 3; j++) {
+                            x += "" +
+                                '<td class="bg-success"><p id="cell' + i + "" + j +
+                                '" </p>' +
+                                '</td>';
+                        }
+                        x += "" + "</tr>";
+                        document.getElementById("tblResult").innerHTML += x;
+                    }
                 }
-                function myFunction13() {
-                    var x = document.getElementById("box13").value;
-                    document.getElementById("13").innerHTML =  x;
-                }
-                function myFunction21() {
-                    var x = document.getElementById("box21").value;
-                    document.getElementById("21").innerHTML = x;
-                }
-                function myFunction22() {
-                    var x = document.getElementById("box22").value;
-                    document.getElementById("22").innerHTML =  x;
-                }
-                function myFunction23() {
-                    var x = document.getElementById("box23").value;
-                    document.getElementById("23").innerHTML = x;
-                }
-                function myFunction31() {
-                    var x = document.getElementById("box31").value;
-                    document.getElementById("31").innerHTML =  x;
-                }
-                function myFunction32() {
-                    var x = document.getElementById("box32").value;
-                    document.getElementById("32").innerHTML = x;
-                }
-                function myFunction33() {
-                    var x = document.getElementById("box33").value;
-                    document.getElementById("33").innerHTML = x;
-                }
-                </script>
+                // function myFunction11() {
+                //     var x = document.getElementById("box11").value;
+                //     document.getElementById("11").innerHTML =  x;
+                // }
+                // function myFunction12() {
+                //     var x = document.getElementById("box12").value;
+                //     document.getElementById("12").innerHTML = x;
+                // }
+                // function myFunction13() {
+                //     var x = document.getElementById("box13").value;
+                //     document.getElementById("13").innerHTML =  x;
+                // }
+                // function myFunction21() {
+                //     var x = document.getElementById("box21").value;
+                //     document.getElementById("21").innerHTML = x;
+                // }
+                // function myFunction22() {
+                //     var x = document.getElementById("box22").value;
+                //     document.getElementById("22").innerHTML =  x;
+                // }
+                // function myFunction23() {
+                //     var x = document.getElementById("box23").value;
+                //     document.getElementById("23").innerHTML = x;
+                // }
+                // function myFunction31() {
+                //     var x = document.getElementById("box31").value;
+                //     document.getElementById("31").innerHTML =  x;
+                // }
+                // function myFunction32() {
+                //     var x = document.getElementById("box32").value;
+                //     document.getElementById("32").innerHTML = x;
+                // }
+                // function myFunction33() {
+                //     var x = document.getElementById("box33").value;
+                //     document.getElementById("33").innerHTML = x;
+                // }
+            </script>
 
     </body>
 
