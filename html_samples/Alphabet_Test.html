@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+
+
+    <style>
+        body {
+            background-color: lightgreen
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Alphabet Test</h1>
+    <!--<p class="print_alphabets"></p>
+    <br />
+    <p class="print_alphabets1"></p>-->
+    <input type="number" id="toprintalphabets" value="">
+    <input type="button" id="btnforprint" value="print" onclick="printAlphabets()">
+    <p>Enter above any number to print the Alphabets that much time</p>
+
+    <p id="alphabets"> A B C D E F G H I J K L M N O P Q R S T U V W X Y Z </p>
+
+    <script>
+        // for (var i = 65; i <= 90; i++) {
+        //  $(".print_alphabets").append("    " + String.fromCharCode(i) + "   ");
+        // }
+        // for (var i = 65; i <= 90; i++) {
+        //  $(".print_alphabets1").append( "    " + String.fromCharCode(i)+ "    ");
+
+        // }
+        var q = parseInt(document.getElementbyID("toprintalphabets").value);
+        printAlphabets();
+        function printAlphabets() {
+        
+            for (var x = 1; x <= q; x++) {
+                var x = " " +
+                '<p id="alphabets"> </p>';
+                           
+            }
+            document.getelementbyID("alphabets").innerHTML += x;
+        }
+    </script>
+</body>
+
+</html>
