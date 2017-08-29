@@ -29,7 +29,7 @@
     <input type="button" id="btnforprint" value="print" onclick="printAlphabets()">
     <p>Enter above any number to print the Alphabets that much time</p>
 
-    <p id="alphabets"> A B C D E F G H I J K L M N O P Q R S T U V W X Y Z </p>
+    <p id="alphabets"> </p>
 
     <script>
         // for (var i = 65; i <= 90; i++) {
@@ -39,16 +39,15 @@
         //  $(".print_alphabets1").append( "    " + String.fromCharCode(i)+ "    ");
 
         // }
-        var q = parseInt(document.getElementbyID("toprintalphabets").value);
-        printAlphabets();
+
         function printAlphabets() {
-        
-            for (var x = 1; x <= q; x++) {
-                var x = " " +
-                '<p id="alphabets"> </p>';
-                           
+            document.getElementById("alphabets").innerHTML += "";
+            var q = parseInt(document.getElementById("toprintalphabets").value);
+            var w = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "R", "S", "T", "U", "W", "X", "Y", "Z"];
+            for (var w = 0; w = 25; w++) {
+                for (var x = 1; x <= q; x++);
             }
-            document.getelementbyID("alphabets").innerHTML += x;
+            document.getElementById("alphabets").innerHTML += w;
         }
     </script>
 </body>
