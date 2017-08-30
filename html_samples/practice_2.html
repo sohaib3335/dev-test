@@ -23,15 +23,16 @@
 <body>
     <div class="container">
         <h1>Alphabet Test</h1>
+        
         <!--<p class="print_alphabets"></p>
     <br />
     <p class="print_alphabets1"></p>-->
-        <!--<input type="number" id="toprintalphabets" value="">
-        <input type="button" id="btnforprint" value="print" onclick="printAlphabets()">
+        <!--<input type="number" id="toprintalphabets" value="">-->
+        <input type="button" id="btnforprint" value="print" onclick="fillArray(value, len)">
         <p>Enter above any number to print the Alphabets that much time</p>
 
         <p id="alphabets"> </p>
-        <br />-->
+        <br />
     </div>
     <script>
         // for (var i = 65; i <= 90; i++) {
@@ -42,11 +43,18 @@
 
         // }
         
-        Array(11).join("a");
-        console.log(Array);
-        function printAlphabets() {
 
-        }
+        function fillArray(value, len) {
+  var arr = [];
+  var len;
+  len = 3;
+  for (var i = 0; i < len; i++) {
+    arr.push(value);
+  }
+  return arr;
+  document.getElementById("alphabets").innerHTML = arr;
+}
+    
         // how to print an array multiple times in javascript
     </script>
 </body>
