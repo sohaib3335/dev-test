@@ -61,15 +61,41 @@
     <script type="text/javascript">
         function myFunction11(box, cell) {
             console.log(box, cell);
-            document.getElementById(cell).innerHTML = document.getElementById(box).value;;
+            document.getElementById(cell).innerHTML = document.getElementById(box).value;
         }
         
-
+        var alphabets = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+            
         generateRows();
         function generateRows() {
             //var x = document.getElementById("tblBody");
             var q = parseInt(document.getElementById("No-of-Rows").value);
             var w = parseInt(document.getElementById("No-of-Columns").value);
+           
+            document.getElementById("tblheading1").innerHTML = "";
+            var heading = "<tr><th></th>";
+            var counter = 0;
+            var secondAlphabet = 0;
+            while (counter < w) {
+
+                for (var i = 0; i < alphabets.length; i++) {
+                    heading += "<th>" + alphabets[i];
+                    if(w > 25 && counter > 25){
+                        if(secondAlphabet < 25) {
+                            heading += alphabets[secondAlphabet];
+                            secondAlphabet++;
+                            i--;
+                        }
+                    }
+                    heading += "</th>";
+                    counter++;
+                    if(counter > w)
+                        break;
+                }
+            }
+            heading += "</tr>";
+            document.getElementById("tblheading1").innerHTML = heading;
+
             document.getElementById("tblBody").innerHTML = "";
             for (var i = 0; i <= q; i++) {
                 var x = "" +
