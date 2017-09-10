@@ -76,22 +76,23 @@
             var heading = "<tr><th></th>";
             var counter = 0;
             var secondAlphabet = 0;
-            while (counter < w) {
-
-                for (var i = 0; i < alphabets.length; i++) {
-                    heading += "<th>" + alphabets[i];
-                    if(w > 25 && counter > 25){
-                        if(secondAlphabet < 25) {
-                            heading += alphabets[secondAlphabet];
-                            secondAlphabet++;
-                            i--;
+            var iteration = 0;
+            while (counter <= w) {
+                    if(counter <= 25) {
+                        var firstAlpha = alphabets[counter];
+                        heading += "<th>" + firstAlpha;
+                        heading += "</th>";
+                    }
+                    else {
+                        var firstAlpha = alphabets[iteration];
+                        heading += "<th>" + firstAlpha + alphabets[secondAlphabet] + "</th>";
+                        secondAlphabet++;
+                        if(secondAlphabet > 25){
+                            secondAlphabet = 0;
+                            iteration++;
                         }
                     }
-                    heading += "</th>";
                     counter++;
-                    if(counter > w)
-                        break;
-                }
             }
             heading += "</tr>";
             document.getElementById("tblheading1").innerHTML = heading;
@@ -103,7 +104,7 @@
                     '<th scope="row" class="bg-success">' + i + '</th>';
                 for (var j = 0; j <= w; j++) {
                     x += "" +
-                        '<td class="bg-success"><input style="max-width:100px;" type="text" class="boxes" id="box' + i + "" + j +
+                        '<td class="bg-success"><input style="max-width:20px;" type="text" class="boxes" id="box' + i + "" + j +
                         '" value="" ' +
                         //'oninput="myFunction11(\'box' + i.toString() + j.toString() + '\',\'cell' + i.toString() + j.toString() + '\')"' +
                         ' /></td>';
