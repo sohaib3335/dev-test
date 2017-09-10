@@ -24,17 +24,16 @@
     <div class="container">
         <h1> Number Analyzer </h1>
         <div id="number_analyzer"></div>
-        <input type="number" id="Number" value="" />
+        <input type="number" id="Number1212" value="" />
         <p> Enter the number to know whether it is POSITIVE/NEGATIVE/Zero </p>
-        <input type="button" class="btn btn-outline-success" id="Go" value="Submit" onclick="numberAnalyzer(theNumber)" />
-        
+        <input type="button" class="btn btn-outline-success" id="Go" value="Submit" onclick="numberAnalyzer()" />
+
     </div>
     <script>
-        var theNumber = parseInt(document.getElementById("Number").value);
         var displayText = '';
 
         function numberAnalyzer(theNumber) {
-            
+            var theNumber = parseInt(document.getElementById("Number1212").value);
             if (theNumber > 0) {
                 displayText = "The Number is Positive";
             }
@@ -47,7 +46,6 @@
             document.getElementById("number_analyzer").innerHTML = displayText;
 
         }
-        
     </script>
 </body>
 
